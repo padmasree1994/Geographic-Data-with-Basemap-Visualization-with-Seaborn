@@ -1,0 +1,46 @@
+!pip install basemap
+
+2)Python code:
+from mpl_toolkits.basemap import Basemap
+import matplotlib.pyplot as plt
+
+plt.figure(figsize=(8, 6))
+
+# Create map
+m = Basemap(
+    projection='merc',
+    llcrnrlat=-60,
+    urcrnrlat=80,
+    llcrnrlon=-180,
+    urcrnrlon=180,
+    resolution='c'
+)
+
+m.drawcoastlines()
+m.drawcountries()
+m.fillcontinents(color='lightgreen', lake_color='lightblue')
+m.drawmapboundary(fill_color='lightblue')
+
+plt.title("World Map using Basemap")
+plt.show()
+
+Install Seaborn:
+!pip install seaborn
+Python code:
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Load sample dataset
+tips = sns.load_dataset("tips")
+
+# Create seaborn scatter plot
+sns.scatterplot(
+    data=tips,
+    x="total_bill",
+    y="tip",
+    hue="sex"
+)
+
+plt.title("Seaborn Visualization")
+plt.show()
